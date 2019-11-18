@@ -8,7 +8,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 
 const routes: Routes = [
-  { path: '', component: HistorietasComponent},
+  { path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: 'home', component: HistorietasComponent},
   { path: 'things', component: CosasComponent},
   { path: 'friends', component: ColegasComponent},
   { path: 'events', component: EventosComponent},

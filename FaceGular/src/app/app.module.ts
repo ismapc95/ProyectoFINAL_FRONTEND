@@ -8,6 +8,13 @@ import { CosasComponent } from './cosas/cosas.component';
 import { ColegasComponent } from './colegas/colegas.component';
 import { EventosComponent } from './eventos/eventos.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { MenuComponent } from './menu/menu.component';
+import { FooterComponent } from './footer/footer.component';
+import { DecirAlgoComponent } from './decir-algo/decir-algo.component';
+import { MisHistorietasComponent } from './mis-historietas/mis-historietas.component';
+import { DatosPersonalesComponent } from './datos-personales/datos-personales.component';
+import { MisColeguillasComponent } from './mis-coleguillas/mis-coleguillas.component';
+import { InfoSiColeguillaComponent } from './info-si-coleguilla/info-si-coleguilla.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +23,14 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     CosasComponent,
     ColegasComponent,
     EventosComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    MenuComponent,
+    FooterComponent,
+    DecirAlgoComponent,
+    MisHistorietasComponent,
+    DatosPersonalesComponent,
+    MisColeguillasComponent,
+    InfoSiColeguillaComponent
   ],
   imports: [
     BrowserModule,
