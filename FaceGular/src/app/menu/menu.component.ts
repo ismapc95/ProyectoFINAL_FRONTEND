@@ -13,7 +13,7 @@ export class MenuComponent implements OnInit {
   constructor(private loggedUser: LoginUserService) { }
 
   ngOnInit() {
-    this.loggedUser.getUserLogin('4')
+    this.loggedUser.getUserLogin()
     .subscribe(
       (data: User) => this.userLogged = data,
       error => console.log(error),

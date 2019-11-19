@@ -1,6 +1,6 @@
 export class Historieta {
     id: number;
-    userId: number;
+    usersId: number;
     content: string;
     publishDate: string;
 }

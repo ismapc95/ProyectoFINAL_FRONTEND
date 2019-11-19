@@ -17,6 +17,8 @@ import { MisColeguillasComponent } from './mis-coleguillas/mis-coleguillas.compo
 import { InfoSiColeguillaComponent } from './info-si-coleguilla/info-si-coleguilla.component';
 import { LoginUserService } from './menu/loginUserService.service';
 import { HttpClientModule } from '@angular/common/http';
+import { MessageComponent } from './message/message.component';
+import { HistorietasService } from './mis-historietas/historietas.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
     MisHistorietasComponent,
     DatosPersonalesComponent,
     MisColeguillasComponent,
-    InfoSiColeguillaComponent
+    InfoSiColeguillaComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     routing
   ],
-  providers: [LoginUserService],
+  providers: [LoginUserService, HistorietasService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

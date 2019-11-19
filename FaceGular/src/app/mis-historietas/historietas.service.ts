@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Historieta } from '../domain/historieta.model';
 
 const URL_BASE = 'http://192.168.1.100:8080';
 
@@ -16,20 +17,15 @@ export class HistorietasService {
 
     constructor(private http: HttpClient) {}
 
-    // POST PARA NUEVA HISTORIA
-    // postHistorieta(msg: Message): Observable<Message> {
-    //     return this.http.post<MEssage>(URL_BASE, msg, httpOptions);
-    // }
-
     // GET DE TODAS LAS HISTORIAS DE TUS AMISTADES + LAS TUYAS
-    // getHistorietasId(id: string) {
-    //     return this.http.get(`${URL_BASE}/${id}`);
-    // }
+    getAllMessages() {
+        return this.http.get(`${URL_BASE}/messages`);
+    }
 
-    // getHistorietasList() {
-    //     return this.http.get(URL_BASE);
-    // }
-
+    // POST PARA NUEVA HISTORIA
+    postMessage(msg: Historieta): Observable<Historieta> {
+        return this.http.post<Historieta>(`${URL_BASE}/messages`, msg, httpOptions);
+    }
 
     // UPDATE DE LA HISTORIA USANDO ENUMS
     // updateHistorieta(reaction: Reaction): Observable<Reaction> {
