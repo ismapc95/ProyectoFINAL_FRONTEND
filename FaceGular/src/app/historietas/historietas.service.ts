@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const URL_BASE = 'http://localhost:3000';
+const URL_BASE = 'http://192.168.1.100:8080';
 
 const httpOptions = {
     headers: new HttpHeaders({

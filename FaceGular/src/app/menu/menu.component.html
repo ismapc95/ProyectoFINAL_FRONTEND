@@ -19,19 +19,21 @@
         </ul>
     </div>
     <div class="col-12 mt-5">
-        <div class="card mb-3 p-3">
-            <div class="row no-gutters">
-                <div class="col-md-3">
-                    <img src="assets/user_pic.png" width="70" class="card-img" alt="Imagen de usuario default">
-                </div>
-                <div class="col-md-9">
-                    <div class="card-body">
-                        <h5 class="card-title pt-5">ISMAEL PASCUAL CALVO</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <ng-container *ngIf="userLogged?.id">
+            <div class="card mb-3 p-3 ">
+                <div class="row no-gutters ">
+                    <div class="col-md-3 ">
+                        <img src="assets/user_pic.png " width="70 " class="card-img " alt="Imagen de usuario default ">
+                    </div>
+                    <div class="col-md-9 ">
+                        <div class="card-body ">
+                            <h5 class="card-title pt-5 ">{{userLogged.name}} {{userLogged.surname}}</h5>
+                            <p class="card-text "><em>Logged as {{userLogged.user}}</em></p>
+                            <p class="card-text "><small class="text-muted ">Last saved password {{userLogged.pass}}</small></p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </ng-container>
     </div>
 </div>
