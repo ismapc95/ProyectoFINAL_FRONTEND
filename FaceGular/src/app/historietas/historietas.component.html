@@ -1,4 +1,4 @@
 <app-menu></app-menu>
-<app-decir-algo></app-decir-algo>
-<app-mis-historietas></app-mis-historietas>
+<app-decir-algo (propagarMsg)="updateHistorietas($event)"></app-decir-algo>
+<app-mis-historietas [messages]="messages"></app-mis-historietas>
 <app-footer></app-footer>

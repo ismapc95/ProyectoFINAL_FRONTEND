@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Historieta } from '../domain/historieta.model';
 import { HistorietasService } from './historietas.service';
 
@@ -8,16 +8,12 @@ import { HistorietasService } from './historietas.service';
   styleUrls: ['./mis-historietas.component.css']
 })
 export class MisHistorietasComponent implements OnInit {
+  @Input()
   messages: Historieta[];
 
   constructor(private msgService: HistorietasService) { }
 
   ngOnInit() {
-    this.msgService.getAllMessages().subscribe(
-      (data: Historieta[]) => this.messages = data,
-      error => console.error(),
-      () => console.log('My message list is loaded!')
-    );
   }
 
 }

@@ -19,6 +19,7 @@ import { LoginUserService } from './menu/loginUserService.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MessageComponent } from './message/message.component';
 import { HistorietasService } from './mis-historietas/historietas.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { HistorietasService } from './mis-historietas/historietas.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     routing
   ],
   providers: [LoginUserService, HistorietasService],

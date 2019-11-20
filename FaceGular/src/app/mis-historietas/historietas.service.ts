@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Historieta } from '../domain/historieta.model';
 
-const URL_BASE = 'http://192.168.1.100:8080';
+const URL_BASE = 'http://localhost:8080';
 
 const httpOptions = {
     headers: new HttpHeaders({
@@ -20,6 +20,11 @@ export class HistorietasService {
     // GET DE TODAS LAS HISTORIAS DE TUS AMISTADES + LAS TUYAS
     getAllMessages() {
         return this.http.get(`${URL_BASE}/messages`);
+    }
+
+    // GET DE SOLO TUS HISTORIAS
+    getSelfMessages(id: string) {
+        return this.http.get(`${URL_BASE}/messages/user/${id}`);
     }
 
     // POST PARA NUEVA HISTORIA

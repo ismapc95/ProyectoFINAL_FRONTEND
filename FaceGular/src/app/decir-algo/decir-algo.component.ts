@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { LoginUserService } from '../menu/loginUserService.service';
 import { Historieta } from '../domain/historieta.model';
 import { HistorietasService } from '../mis-historietas/historietas.service';
-import { User } from '../domain/user.model';
+import { Router } from '@angular/router';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-decir-algo',
@@ -11,34 +12,29 @@ import { User } from '../domain/user.model';
   styleUrls: ['./decir-algo.component.css']
 })
 export class DecirAlgoComponent implements OnInit {
-  messageInsert: Historieta;
-  currentUser: User;
+  messageToInsert: string;
+  @Output() propagarMsg = new EventEmitter<Historieta>();
 
-  constructor(private loginUser: LoginUserService, private histoService: HistorietasService, private http: HttpClient) { }
+  // tslint:disable-next-line: max-line-length
+  constructor(private loginUser: LoginUserService, private histoService: HistorietasService, private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
     console.log(`USER LOGGED AS ID: ${this.loginUser.idLogUser}`);
-    this.messageInsert = new Historieta();
-    // addMessage() {
-    //   // console.log(itemInsert);
-    //   this.itemListService.addItem(itemInsert)
-    //   .subscribe(data => this.myItems.push(itemInsert));
-    // }
   }
 
-  addMessage(messageInsert: Historieta) {
-    event.preventDefault();
-    this.messageInsert.id = null;
-    this.messageInsert.usersId = this.loginUser.idLogUser;
-    const fecha = new Date();
-    this.messageInsert.publishDate = fecha.toLocaleDateString();
-    this.messageInsert.content = 'eowifhwoefhwohef';
-    console.log(messageInsert);
-    // ERROR
-    this.histoService.postMessage(this.messageInsert).subscribe(
-      (data: Historieta) => console.log(data),
+  addMessage() {
+    const msg = new Historieta();
+    msg.id = null;
+    msg.usersId = this.loginUser.idLogUser;
+    const dattim = new Date();
+    const fecha = `${dattim.getFullYear()}-${dattim.getMonth()}-${dattim.getDay()}`;
+    const aux = `${fecha} ${dattim.getHours()}:${dattim.getMinutes()}:${dattim.getSeconds()}.${dattim.getMilliseconds()}`;
+    msg.publishDate = aux;
+    msg.content = this.messageToInsert;
+    this.histoService.postMessage(msg).subscribe(
+      (data: Historieta) => this.propagarMsg.emit(msg),
       error => console.log(error),
-      () => console.log('My item list is loaded!')
+      () => console.log('OK')
     );
   }
 

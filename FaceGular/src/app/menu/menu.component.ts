@@ -17,7 +17,7 @@ export class MenuComponent implements OnInit {
     .subscribe(
       (data: User) => this.userLogged = data,
       error => console.log(error),
-      () => console.log('My item list is loaded!')
+      () => console.log(`FAKE LOGIN`)
     );
   }
 
