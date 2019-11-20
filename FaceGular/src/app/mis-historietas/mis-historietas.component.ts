@@ -8,8 +8,7 @@ import { HistorietasService } from './historietas.service';
   styleUrls: ['./mis-historietas.component.css']
 })
 export class MisHistorietasComponent implements OnInit {
-  @Input()
-  messages: Historieta[];
+  @Input() messages: Historieta[];
 
   constructor(private msgService: HistorietasService) { }
 

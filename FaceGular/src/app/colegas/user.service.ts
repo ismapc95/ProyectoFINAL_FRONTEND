@@ -12,12 +12,14 @@ const httpOptions = {
 };
 
 @Injectable()
-export class LoginUserService {
-    idLogUser = 1;
+export class UserService {
     constructor(private http: HttpClient) {}
 
-    // GET DE USER POR ID PARA SIMULAR UN LOGIN
-    getUserLogin() {
-        return this.http.get(`${URL_BASE}/users/${this.idLogUser}`);
+    // OBETENER MIS AMIGOS
+    getSelfFriends(id: string) {
+        return this.http.get(`${URL_BASE}/users/${id}/friendsRelationships`);
     }
+
+    // AMISTADES PENDIENTES AUN
+    // /users/{id}/pendingRelationships
 }

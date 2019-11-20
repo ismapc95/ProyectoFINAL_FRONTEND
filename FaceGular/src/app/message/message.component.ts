@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class MessageComponent implements OnInit {
   @Input() message: Historieta;
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit() {
   }

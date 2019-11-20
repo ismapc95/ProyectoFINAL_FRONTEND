@@ -20,6 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MessageComponent } from './message/message.component';
 import { HistorietasService } from './mis-historietas/historietas.service';
 import { FormsModule } from '@angular/forms';
+import { UserService } from './colegas/user.service';
+import { FriendCardComponent } from './friend-card/friend-card.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { FormsModule } from '@angular/forms';
     DatosPersonalesComponent,
     MisColeguillasComponent,
     InfoSiColeguillaComponent,
-    MessageComponent
+    MessageComponent,
+    FriendCardComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     routing
   ],
-  providers: [LoginUserService, HistorietasService],
+  providers: [LoginUserService, HistorietasService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
