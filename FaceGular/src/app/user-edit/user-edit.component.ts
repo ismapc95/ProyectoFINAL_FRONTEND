@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LoginUserService } from '../menu/loginUserService.service';
 import { User } from '../domain/user.model';
+import { UserService } from '../colegas/user.service';
 
 @Component({
   selector: 'app-user-edit',
@@ -10,7 +11,8 @@ import { User } from '../domain/user.model';
 })
 export class UserEditComponent implements OnInit {
   editingUser: User;
-  constructor(private router: Router, private route: ActivatedRoute, private currUserLog: LoginUserService) { }
+  // tslint:disable-next-line: max-line-length
+  constructor(private router: Router, private route: ActivatedRoute, private currUserLog: LoginUserService, private userServ: UserService) { }
 
   ngOnInit() {
     this.loadInfo();
@@ -32,7 +34,8 @@ export class UserEditComponent implements OnInit {
   }
 
   upgradeUser() {
-
+    this.userServ.setValuesUser(this.editingUser).subscribe();
+    this.router.navigate(['things']);
   }
 
 }

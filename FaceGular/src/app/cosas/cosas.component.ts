@@ -4,6 +4,7 @@ import { HistorietasService } from '../mis-historietas/historietas.service';
 import { LoginUserService } from '../menu/loginUserService.service';
 import { UserService } from '../colegas/user.service';
 import { Relationship } from '../domain/relationship.model';
+import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-cosas',
@@ -17,7 +18,7 @@ export class CosasComponent implements OnInit {
 
   ngOnInit() {
     this.selfStory();
-    this.selfFriendships();
+    this.selfAllFriendships();
   }
 
   selfStory() {
@@ -28,12 +29,14 @@ export class CosasComponent implements OnInit {
     );
   }
 
-  selfFriendships() {
+  selfAllFriendships() {
     this.friendServ.getSelfFriends(String(this.loged.idLogUser)).subscribe(
-      (data: Relationship[]) => this.friends = data,
-      error => console.log(error),
-      () => console.log('Recibidos todos mis amigos')
+      (data: Relationship[]) => this.friends = data
+    );
+    this.friendServ.getSelfFriendsPending(String(this.loged.idLogUser)).subscribe(
+      (data: Relationship[]) => this.friends = this.friends.concat(data)
     );
   }
+
 
 }
