@@ -1,14 +1,16 @@
-<div class="card">
-    <h5 class="card-header">Mis datos personales *ID hidden</h5>
-    <div class="card-body">
-        <ul class="card-text list-unstyled">
-            <li>NOMBRE</li>
-            <li>APELLIDOS</li>
-            <li>CUMPLEAÑOS</li>
-            <li>FECHA DE CREACION</li>
-            <li>NICKNAME</li>
-            <li>PASSWORD</li>
-        </ul>
-        <a routerLink="/editUserData/id" class="btn btn-primary">Editar mis datos</a>
+<ng-container *ngIf="editableUser?.id">
+    <div class="card">
+        <h5 class="card-header">Datos personales del ID {{editableUser.id}}</h5>
+        <div class="card-body">
+            <ul class="card-text list-unstyled">
+                <li><em>{{editableUser.name}}</em></li>
+                <li><em>{{editableUser.surname}}</em></li>
+                <li><em>{{editableUser.birthDate | date }}</em></li>
+                <li><em>{{editableUser.startDate | date }}</em></li>
+                <li>{{editableUser.user}}</li>
+                <li>{{editableUser.pass}}</li>
+            </ul>
+            <a routerLink="/user/{{editableUser.id}}" class="btn btn-primary">Editar mis datos</a>
+        </div>
     </div>
-</div>
+</ng-container>

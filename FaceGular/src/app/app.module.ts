@@ -22,6 +22,7 @@ import { HistorietasService } from './mis-historietas/historietas.service';
 import { FormsModule } from '@angular/forms';
 import { UserService } from './colegas/user.service';
 import { FriendCardComponent } from './friend-card/friend-card.component';
+import { UserEditComponent } from './user-edit/user-edit.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { FriendCardComponent } from './friend-card/friend-card.component';
     MisColeguillasComponent,
     InfoSiColeguillaComponent,
     MessageComponent,
-    FriendCardComponent
+    FriendCardComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,

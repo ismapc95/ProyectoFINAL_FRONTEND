@@ -13,6 +13,7 @@ const httpOptions = {
 
 @Injectable()
 export class LoginUserService {
+    // CURRENT USER LOGGED
     idLogUser = 1;
     constructor(private http: HttpClient) {}
 

@@ -1,0 +1,29 @@
+<ng-container *ngIf="editingUser?.id">
+    <form class="pt-5">
+        <div class="form-group">
+            <label for="namef">Nombre:</label>
+            <input type="text" class="form-control" id="namef" [(ngModel)]="editingUser.name">
+        </div>
+        <div class="form-group">
+            <label for="surnamef">Apellido:</label>
+            <input type="text" class="form-control" id="surnamef" [(ngModel)]="editingUser.surname">
+        </div>
+        <div class="form-group">
+            <label for="birthDatef">Fecha de nacimiento:</label>
+            <input type="text" class="form-control" id="birthDatef" [(ngModel)]="editingUser.birthDate">
+        </div>
+        <div class="form-group">
+            <label for="startDatef">Fecha de registro:</label>
+            <input type="text" class="form-control" id="startDatef" [(ngModel)]="editingUser.startDate" readonly>
+        </div>
+        <div class="form-group">
+            <label for="userf">Nombre de usuario:</label>
+            <input type="text" class="form-control" id="userf" [(ngModel)]="editingUser.user">
+        </div>
+        <div class="form-group">
+            <label for="passf">Password:</label>
+            <input type="text" class="form-control" id="passf" [(ngModel)]="editingUser.pass" readonly>
+        </div>
+        <button (click)="upgradeUser()" class="btn btn-primary">Submit</button>
+    </form>
+</ng-container>
