@@ -16,6 +16,10 @@ const httpOptions = {
 export class UserService {
     constructor(private http: HttpClient) {}
 
+    getAllUsers() {
+        return this.http.get(`${URL_BASE}/users/`);
+    }
+
     // OBETENER MIS AMIGOS
     getSelfFriends(id: string) {
         return this.http.get(`${URL_BASE}/users/${id}/friendsRelationships`);

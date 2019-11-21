@@ -1,0 +1,8 @@
+<div>
+    <p class="pt-5"><strong>Usuarios</strong></p>
+    <div class="overflow-auto" style="max-height: 300px;">
+        <div *ngFor="let usuario of usuarios">
+            <app-user-card [usuario]="usuario"></app-user-card>
+        </div>
+    </div>
+</div>

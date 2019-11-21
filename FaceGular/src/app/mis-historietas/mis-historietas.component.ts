@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Historieta } from '../domain/historieta.model';
-import { HistorietasService } from './historietas.service';
 
 @Component({
   selector: 'app-mis-historietas',
@@ -10,7 +9,7 @@ import { HistorietasService } from './historietas.service';
 export class MisHistorietasComponent implements OnInit {
   @Input() messages: Historieta[];
 
-  constructor(private msgService: HistorietasService) { }
+  constructor() { }
 
   ngOnInit() {
   }

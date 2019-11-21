@@ -1,0 +1,6 @@
+<nav class="navbar navbar-light bg-light justify-content-center">
+    <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Búsqueda por nombre" aria-label="Search" name="searchIn" [(ngModel)]="userSearch">
+        <button (click)="filterUsers(userSearch)" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+    </form>
+</nav>

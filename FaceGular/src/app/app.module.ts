@@ -23,6 +23,9 @@ import { FormsModule } from '@angular/forms';
 import { UserService } from './colegas/user.service';
 import { FriendCardComponent } from './friend-card/friend-card.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
+import { BuscadorAmigosComponent } from './buscador-amigos/buscador-amigos.component';
+import { AllUsersComponent } from './all-users/all-users.component';
+import { UserCardComponent } from './user-card/user-card.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,10 @@ import { UserEditComponent } from './user-edit/user-edit.component';
     InfoSiColeguillaComponent,
     MessageComponent,
     FriendCardComponent,
-    UserEditComponent
+    UserEditComponent,
+    BuscadorAmigosComponent,
+    AllUsersComponent,
+    UserCardComponent
   ],
   imports: [
     BrowserModule,
