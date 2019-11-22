@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-buscador-amigos',
@@ -7,12 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuscadorAmigosComponent implements OnInit {
   userSearch: string;
+  @Output() msgToFilter: EventEmitter<string> = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
   }
 
-  filterUsers(param: any) {
-    console.log(param);
+  filterUsers(searchValue: string) {
+    this.msgToFilter.emit(searchValue);
   }
 }

@@ -8,6 +8,7 @@ import { User } from '../domain/user.model';
 })
 export class AllUsersComponent implements OnInit {
   @Input() usuarios: User[];
+  @Input() nameSearch: string;
   constructor() { }
 
   ngOnInit() {

@@ -1,7 +1,7 @@
 <app-menu></app-menu>
-<app-buscador-amigos></app-buscador-amigos>
+<app-buscador-amigos (msgToFilter)="changeInputValue($event)"></app-buscador-amigos>
 <div class="row">
-    <app-all-users [usuarios]="usuarios" class="col-12"></app-all-users>
+    <app-all-users [nameSearch]="nameSearch" [usuarios]="usuarios" class="col-12"></app-all-users>
     <app-info-si-coleguilla></app-info-si-coleguilla>
 </div>
 <app-footer></app-footer>

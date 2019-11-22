@@ -9,6 +9,7 @@ import { UserService } from './user.service';
 })
 export class ColegasComponent implements OnInit {
   usuarios: User[];
+  nameSearch = '';
   constructor(private userServ: UserService) { }
 
   ngOnInit() {
@@ -21,5 +22,10 @@ export class ColegasComponent implements OnInit {
       error => console.log(error),
       () => console.log('Recibidos todos los usuarios')
     );
+  }
+
+  changeInputValue(event) {
+    this.nameSearch = event;
+    console.log(`${this.nameSearch} = ${event}`);
   }
 }

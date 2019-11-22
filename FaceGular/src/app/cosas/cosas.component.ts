@@ -37,6 +37,4 @@ export class CosasComponent implements OnInit {
       (data: Relationship[]) => this.friends = this.friends.concat(data)
     );
   }
-
-
 }
