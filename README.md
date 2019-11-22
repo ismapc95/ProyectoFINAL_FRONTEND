@@ -25,3 +25,5 @@ FAST COMPONENTS LIST
         * USER-CARD
     * EVENTOS
     * FOOTER
+
+https://trello.com/b/Cr398B1I/frontangular
