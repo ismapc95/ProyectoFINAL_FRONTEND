@@ -26,6 +26,6 @@ export class ColegasComponent implements OnInit {
 
   changeInputValue(event) {
     this.nameSearch = event;
-    console.log(`${this.nameSearch} = ${event}`);
+    // console.log(`${this.nameSearch} = ${event}`);
   }
 }

@@ -13,4 +13,7 @@ export class UserCardComponent implements OnInit {
   ngOnInit() {
   }
 
+  showId(id: string) {
+    console.log(`Click en ${id}`);
+  }
 }
